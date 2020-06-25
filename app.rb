@@ -18,11 +18,15 @@ class Building
   end
 
   def placard
-    "#{self.name} at #{self.address}"
+    "#{@name} at #{@adress}"
   end
 
   def tenants_per_floor
-    self.tenants / @floors
+    @tenants / @floors
+  end
+
+  def self.max_tenants
+    all.max_by(&:tenants)
   end
 end
 
